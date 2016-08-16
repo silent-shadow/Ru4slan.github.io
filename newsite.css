@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body{
-	background:url(images/me3.jpg);
+	background:url(me3.jpg);
 background-attachment: fixed;
 }
 #content::before, #content::after {
@@ -155,7 +155,7 @@ font-size:20px;
 
 #navigation{
 	height:65px;
-	background: url(images/fixed_menu.jpg);
+	background: url(fixed_menu.jpg);
 	width:900px;
 	margin-left:250px;
 	position:fixed;
