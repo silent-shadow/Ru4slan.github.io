@@ -120,7 +120,7 @@ color:white;
 }
 
 #News .name{
-	background: url(news-back.jpg);
+	background: url(newsback.jpg);
 	padding:5px;
 	font-family: 'Roboto Slab', bold;
 font-size:25px;	
@@ -140,7 +140,7 @@ color:black;
 }
 
 #News .coment{
-	background: url(news-back-comment.jpg);
+	background: url(newsbackcomment.jpg);
 	font-family: 'Roboto Slab', bold;
 font-size:20px;	
 text-align:right;
@@ -165,7 +165,7 @@ text-align:right;
 	float:left;
 	position:relative;
 	list-style-type:none;
-	background:url(menu_button.jpg);
+	background:url(menubutton.jpg);
 	width:180px;
 	text-align:center;
 
@@ -187,7 +187,7 @@ color:white;
 
 
 #navigation ul li a:hover{
-	background:url(images/menu_button_hover.jpg);
+	background:url(menubuttonhover.jpg);
 }
 
 
