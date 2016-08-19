@@ -140,7 +140,7 @@ color:black;
 }
 
 #News .coment{
-	background: url(Images/news-back-comment.jpg);
+	background: url(news-back-comment.jpg);
 	font-family: 'Roboto Slab', bold;
 font-size:20px;	
 text-align:right;
@@ -165,7 +165,7 @@ text-align:right;
 	float:left;
 	position:relative;
 	list-style-type:none;
-	background:url(images/menu_button.jpg);
+	background:url(menu_button.jpg);
 	width:180px;
 	text-align:center;
 
