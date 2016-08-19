@@ -45,16 +45,16 @@ background-attachment: fixed;
 }
 
 #content{
-
-margin-left:18.7%;
-	background:white;
+	
+ margin-left:18.7%;
 	width:900px;
+	background:white;
 }
 
 #shapka{
 
 padding-top:65px;
-margin-left:18.7%;
+	margin-left:18.7%;
 }
 
 #menu{
@@ -110,7 +110,7 @@ color:white;
 }
 
 #News{
-	background:white;
+
 		width:625px;
 	float:left;
 	height:1000px;
@@ -120,7 +120,7 @@ color:white;
 }
 
 #News .name{
-	background:#575454;
+	background: url(news-back.jpg);
 	padding:5px;
 	font-family: 'Roboto Slab', bold;
 font-size:25px;	
@@ -140,9 +140,10 @@ color:black;
 }
 
 #News .coment{
-	background:#575454;
+	background: url(Images/news-back-comment.jpg);
 	font-family: 'Roboto Slab', bold;
 font-size:20px;	
+text-align:right;
 }
 
 #News .coment a:visited{
@@ -155,7 +156,6 @@ font-size:20px;
 
 #navigation{
 	height:65px;
-	background: url(fixed_menu.jpg);
 	width:900px;
 	margin-left:18.7%;
 	position:fixed;
@@ -165,6 +165,11 @@ font-size:20px;
 	float:left;
 	position:relative;
 	list-style-type:none;
+	background:url(images/menu_button.jpg);
+	width:180px;
+	text-align:center;
+
+	
 }
 
 #navigation ul li a{
@@ -173,20 +178,16 @@ padding: 0 10px;
 text-decoration:none;
 line-height: 65px;
 display: block;
+
 height:65px;
 font-family: 'Ruslan Display', cursive;	
-line-height: 65px;
+color:white;
+
 }
 
-#navigation ul li.registration{
-	float:right;
-}
-#navigation ul li.registration:hover{
-	background:red;
-}
 
 #navigation ul li a:hover{
-	background:red;
+	background:url(images/menu_button_hover.jpg);
 }
 
 
