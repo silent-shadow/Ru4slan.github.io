@@ -176,7 +176,7 @@ font-size:20px;
 }
 
 #News .coment{
-	background: url(Images/news-back-comment.jpg);
+	background: url(news-back-comment.jpg);
 	font-family: 'Roboto Slab', bold;
 font-size:18px;	
 text-align:right;
@@ -205,7 +205,7 @@ text-align:right;
 	float:left;
 	position:relative;
 	list-style-type:none;
-	background:url(images/menu_button.jpg);
+	background:url(menu_button.jpg);
 	width:180px;
 	text-align:center;	
 }
@@ -228,7 +228,7 @@ color:white;
 
 
 #navigation ul li a:hover{
-	background:url(images/menu_button_hover.jpg);
+	background:url(menu_button_hover.jpg);
 }
 
 
