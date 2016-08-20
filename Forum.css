@@ -68,6 +68,15 @@ padding-top:65px;
 	
 }
 
+a:visited{
+	color:red;
+}
+
+a:link{
+	color:green;
+}
+
+
 #News form{
 float:left;	
 }
@@ -100,7 +109,7 @@ font-size:25px;
 height:25px;
 background:url(post.jpg);
 color:white;
-border-radius: 10px;
+ border-radius: 20px 20px 0 0;
 
 }
 
@@ -113,8 +122,37 @@ border-radius: 10px;
 		
 }
 
+#Post-text{
+
+height:30px;
+color:white;
+
+	background:url(newsbackcomment.jpg);
+}
+
+#Post-text ul li{
+		float:left;
+	list-style-type:none;
+	text-align:center;	
+
+		width:150px;
+
+}
+
+#Post-text ul li::after{
+padding-top:5px;
+}
+
+
+
+#Post-text #themename{
+width:300px;	
+}
+
+
+
 #Info-post #forumname{
-	width:420px;
+	width:300px;
 }
 
 
@@ -124,7 +162,6 @@ border-radius: 10px;
 }
 
 #Post-text p{
-word-wrap: break-word;	
 }
 
 
