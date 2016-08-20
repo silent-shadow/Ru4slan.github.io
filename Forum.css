@@ -1,0 +1,196 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body{
+	background:url(me3.jpg);
+background-attachment: fixed;
+}
+#content::before, #content::after {
+    content:"";
+    display:table;
+}
+#content::after {
+    clear:both;
+}
+#content {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+#content{
+	
+ margin-left:18.7%;
+	width:900px;
+	background:white;
+}
+
+#shapka{
+
+padding-top:65px;
+	margin-left:18.7%;
+}
+
+#News{
+
+	width:900px;
+	float:left;
+	height:1000px;
+	color:black;
+	padding-right:5px;
+	padding-top:5px;
+	
+}
+
+#News form{
+float:left;	
+}
+
+
+#News .name{
+	background: url(newsback.jpg);
+	padding:5px;
+	font-family: 'Roboto Slab', bold;
+font-size:25px;	
+}
+
+#comment{
+	float:left;
+}
+
+
+
+#News .coment::after{
+	content:" ";
+	background:white;
+	display:block;
+	width:100%;	
+}
+
+
+
+#Info-post{
+
+height:25px;
+background:url(post.jpg);
+color:white;
+border-radius: 10px;
+
+}
+
+#Info-post ul li{
+		float:left;
+	list-style-type:none;
+	text-align:center;	
+
+		width:150px;
+		
+}
+
+#Info-post #forumname{
+	width:420px;
+}
+
+
+
+#Post{
+	margin-left:5px;	
+}
+
+#Post-text p{
+word-wrap: break-word;	
+}
+
+
+
+#News .osn{
+background:#D9D5D5;
+color:black;
+font-size:20px;	
+}
+
+#News .coment{
+	background: url(newsbackcomment.jpg);
+	font-family: 'Roboto Slab', bold;
+font-size:18px;	
+text-align:right;
+}
+
+#News .coment::after{
+	height:20px;
+}
+
+#News .coment a:visited{
+	color:#FFFFFF;
+}
+
+#News .coment a:link{
+	color:red;
+}
+
+#navigation{
+	height:65px;
+	width:900px;
+	margin-left:18.7%;
+	position:fixed;
+}
+
+#navigation ul li {
+	float:left;
+	position:relative;
+	list-style-type:none;
+	background:url(menubutton.jpg);
+	width:180px;
+	text-align:center;	
+}
+
+#navigation ul li a{
+color:#000;
+padding: 0 10px;
+text-decoration:none;
+line-height: 65px;
+display: block;
+height:65px;
+font-family: 'Ruslan Display', cursive;	
+color:white;
+}
+
+
+
+
+#navigation ul li a:hover{
+	background:url(menubuttonhover.jpg);
+}
+
+
+
+
+
+
+
