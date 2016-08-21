@@ -49,6 +49,7 @@ background-attachment: fixed;
  margin-left:18.7%;
 	width:900px;
 	background:white;
+		border-radius: 6px 6px 0 0;
 }
 
 #shapka{
@@ -61,7 +62,7 @@ padding-top:65px;
 
 	width:900px;
 	float:left;
-	height:1000px;
+	height:250px;
 	color:black;
 	padding-right:5px;
 	padding-top:5px;
@@ -105,7 +106,7 @@ font-size:25px;
 
 
 #Info-post{
-
+width:890px;
 height:25px;
 background:url(post.jpg);
 color:white;
@@ -124,10 +125,10 @@ color:white;
 
 #Post-text{
 
-height:30px;
+height:60px;
 color:white;
-
-	background:url(newsbackcomment.jpg);
+width:890px;
+	background:url(themeblack.jpg);
 }
 
 #Post-text ul li{
@@ -139,6 +140,11 @@ color:white;
 
 }
 
+#firsts{
+	line-height:50px;
+}
+
+
 #Post-text ul li::after{
 padding-top:5px;
 }
@@ -146,7 +152,8 @@ padding-top:5px;
 
 
 #Post-text #themename{
-width:300px;	
+width:300px;
+line-height:50px;	
 }
 
 
@@ -225,6 +232,15 @@ color:white;
 	background:url(menubuttonhover.jpg);
 }
 
+#footer{
+
+	background:url(footer.jpg);
+	margin-left:18.7%;
+	width:900px;
+	height:40px;
+	text-align:center;
+	border-radius: 0 0 6px 6px;
+}
 
 
 
