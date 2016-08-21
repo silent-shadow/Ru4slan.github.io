@@ -111,6 +111,7 @@ height:25px;
 background:url(post.jpg);
 color:white;
  border-radius: 20px 20px 0 0;
+ 	box-shadow: 0 0 10px rgba(0,0,0,0.9);
 
 }
 
@@ -129,6 +130,7 @@ height:60px;
 color:white;
 width:890px;
 	background:url(themeblack.jpg);
+	box-shadow: 0 0 10px rgba(255,0,0,0.9);
 }
 
 #Post-text ul li{
@@ -142,6 +144,10 @@ width:890px;
 
 #firsts{
 	line-height:50px;
+}
+
+#Post-text:hover{
+	background:url(themeblack2.jpg);
 }
 
 
