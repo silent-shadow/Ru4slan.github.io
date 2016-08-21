@@ -49,13 +49,16 @@ background-attachment: fixed;
  margin-left:18.7%;
 	width:900px;
 	background:white;
-	border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 0 10px rgba(255,0,0,0.9);
 }
 
 #shapka{
 
 padding-top:65px;
 	margin-left:18.7%;
+	box-shadow: 0 0 10px white;
+width:900px;	
 }
 
 #menu{
@@ -123,6 +126,7 @@ color:white;
 	color:black;
 	padding-right:5px;
 	padding-top:5px;
+	
 }
 
 
@@ -132,6 +136,7 @@ color:white;
 	padding:5px;
 	font-family: 'Roboto Slab', bold;
 font-size:25px;	
+
 }
 
 #comment{
@@ -156,6 +161,7 @@ height:25px;
 background:url(post.jpg);
 color:white;
 padding-right:5px;
+box-shadow: 0 0 10px black;
 
 }
 
@@ -176,6 +182,7 @@ border-radius: 10px;
 
 #Post-text p{
 word-wrap: break-word;
+box-shadow: 0 0 10px black;
 	
 }
 
@@ -193,10 +200,11 @@ font-size:20px;
 font-size:18px;	
 text-align:right;
 border-radius: 0 0 6px 6px;
+box-shadow: 0 0 10px black;
 }
 
 #News .coment::after{
-	height:20px;
+	margin-bottom:15px;
 }
 
 #News .coment a:visited{
