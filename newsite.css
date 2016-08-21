@@ -45,23 +45,26 @@ background-attachment: fixed;
 }
 
 #content{
-	
+box-shadow: 0 0 10px rgba(255,0,0,0.9);	
  margin-left:18.7%;
 	width:900px;
 	background:white;
+		border-radius: 6px 6px 0 0;
 }
 
 #shapka{
 
 padding-top:65px;
 	margin-left:18.7%;
+	box-shadow: 0 0 10px white;
+width:900px;	
 }
 
 #menu{
 
 	width:250px;
 	float:right;
-	padding-left:5px;
+	padding-right:5px;
 
 }
 #menu .zagolovok{
@@ -113,30 +116,28 @@ color:white;
 
 		width:625px;
 	float:left;
-	height:1000px;
+	height:auto;
 	color:white;
 	padding-right:5px;
 	padding-top:5px;
+	padding-left:5px;
 }
 
 #News .name{
 	background: url(newsback.jpg);
 	padding:5px;
 	font-family: 'Roboto Slab', bold;
-font-size:25px;	
+font-size:25px;
+border-radius: 6px 6px 0 0;
+box-shadow: 0 0 10px black;	
 }
 
-#News .coment::after{
-	content:" ";
-	background:white;
-	display:block;
-	width:100%;
-	height:20px;	
-}
+
 
 #News .osn{
 background:#D9D5D5;
-color:black;	
+color:black;
+box-shadow: 0 0 10px black;	
 }
 
 #News .coment{
@@ -144,6 +145,13 @@ color:black;
 	font-family: 'Roboto Slab', bold;
 font-size:20px;	
 text-align:right;
+margin-bottom:15px;
+box-shadow: 0 0 10px black;
+
+}
+
+.coment{
+border-radius: 0 0 6px 6px;	
 }
 
 #News .coment a:visited{
@@ -189,6 +197,20 @@ color:white;
 #navigation ul li a:hover{
 	background:url(menubuttonhover.jpg);
 }
+
+
+#footer{
+
+	background:url(footer.jpg);
+	margin-left:18.7%;
+	width:900px;
+	height:40px;
+	text-align:center;
+	border-radius: 0 0 6px 6px;
+		box-shadow: 0 0 10px orange;
+line-height:40px;		
+}
+
 
 
 
