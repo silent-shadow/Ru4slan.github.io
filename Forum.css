@@ -45,7 +45,7 @@ background-attachment: fixed;
 }
 
 #content{
-	
+box-shadow: 0 0 10px rgba(255,0,0,0.9);	
  margin-left:18.7%;
 	width:900px;
 	background:white;
@@ -56,17 +56,24 @@ background-attachment: fixed;
 
 padding-top:65px;
 	margin-left:18.7%;
+	box-shadow: 0 0 10px white;
+width:900px;	
 }
 
 #News{
 
 	width:900px;
 	float:left;
-	height:250px;
+	height:auto;
 	color:black;
 	padding-right:5px;
 	padding-top:5px;
 	
+}
+
+
+#News::after{
+	margin:15px;
 }
 
 a:visited{
@@ -209,6 +216,7 @@ text-align:right;
 	width:900px;
 	margin-left:18.7%;
 	position:fixed;
+	box-shadow: 0 0 10px white;	
 }
 
 #navigation ul li {
@@ -246,6 +254,8 @@ color:white;
 	height:40px;
 	text-align:center;
 	border-radius: 0 0 6px 6px;
+		box-shadow: 0 0 10px orange;
+line-height:40px;		
 }
 
 
