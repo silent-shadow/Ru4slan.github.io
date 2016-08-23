@@ -14,7 +14,6 @@
 <li ><a href="Guest.html">Гостевая</a></li>
 </ul>
 <ul >
-<li class="registration" ><a href="#">Вход</a></li>
 <li class="registration" ><a href="#">Регистрация</a></li>
 
 </ul>
@@ -29,13 +28,17 @@
 </div>
 
 <div id="content">
-<div id="menu">
-<p class="zagolovok">Новости</p>
-<ul>
-<li> <a href="#">Новость 1</a></li>
-<li><a href="#">Новость 2</a></li>
-<li><a href="#">Новость 3</a></li>
-</ul>
+<div id="quick_enter">
+<p align="center" class="zagolovok" >Быстрый вход</p>
+<form action="index.html" method="GET">
+<p class="vvod" align="center"><label for="EnterLogin">Логин:<br><input type="text" name="login" id="EnterLogin" placeholder="Введите логин"></p>
+
+<p class="vvod" align="center"><label for="EnterPassword">Пароль:</br></label><input type="password" name="password" id="EnterPassword" placeholder="Введите пароль"></p>
+
+<p class="enter" align="center"><input type="submit" name="submit" value="Войти!"> </p>
+</form>
+
+
 </div>
 
 
