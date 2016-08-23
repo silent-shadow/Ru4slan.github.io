@@ -69,62 +69,63 @@ a:link{
 	color:white;
 }
 
-#menu{
+#quick_enter{
 
 	width:250px;
 	float:right;
-	padding-left:5px;
 	padding-right:5px;
-	margin-right:5px;
-	margin-top:5px;
+	padding-top:5px;
 	height:auto;
-	border: 1px solid black;
-
-}
-#menu .zagolovok{
-	font-size:20px;
-	font-family: 'Ruslan Display', cursive;
-background:#CB2A2A;
-color:white;
-}
-#menu .zagolovok::after{
-	content:" ";
-	background:black;
-	display:block;
-	width:100%;
-	height:5px;
-	
 	
 }
 
-#menu li{
-	padding:5px;
-	font-family: 'Lobster', cursive;
-	background:#CB2A2A;
+
+
+#quick_enter .zagolovok{
+	background:url(post.jpg);
+		box-shadow: 0 0 10px rgba(255,0,0,0.9);
+			border-radius: 6px 6px 0 0;
+			font-size:20px;
+			font-family: 'Ruslan Display', cursive;	
+			color:white;
+
+}
+
+#quick_enter form .vvod {
+	background:url(quickenter.jpg);
 	color:white;
-	list-style-type: square ;
-	list-style-position:inside;
+	padding-bottom:15px;
+	vertical-align:center;
+	font-size:20px;
 }
-#menu li::after{
-	content:" ";
-	background:black;
-	display:block;
-	width:100%;
-	height:5px;
-	
+
+#quick_enter form .vvod input {
+
+	color:black;
+	padding-bottom:5px;
+	vertical-align:center;
+	width:90%;
 }
 
 
-#menu li:hover{
-	background:#F23232;
+#quick_enter form .enter{
+	background:url(post.jpg);
+	float:center;
+	border-radius: 0 0 6px 6px;
+	height:100%;
 }
-#menu::before{
-	content:" ";
-	background:white;
-	display:block;
-	width:100%;
-	height:5px;	
+
+#quick_enter form .enter input{
+	float:center;
+	border-radius: 20px 20px 20px 20px;
+	height:30px;
+	width:150px;
+	margin-bottom:5px;
+	margin-top:5px;
 }
+
+
+
 
 #News{
 
@@ -238,9 +239,11 @@ box-shadow: 0 0 10px black;
 	float:left;
 	position:relative;
 	list-style-type:none;
-	background:url(menubutton.jpg);
-	width:180px;
-	text-align:center;	
+	background:url(menubutton1.jpg);
+	width:225px;
+	text-align:center;
+
+	
 }
 
 #navigation ul li a{
@@ -258,7 +261,7 @@ color:white;
 
 
 #navigation ul li a:hover{
-	background:url(menubuttonhover.jpg);
+	background:url(menubuttonhover1.jpg);
 }
 
 #footer{
