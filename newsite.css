@@ -37,6 +37,9 @@ background-attachment: fixed;
     content:"";
     display:table;
 }
+
+
+
 #content::after {
     clear:both;
 }
@@ -189,11 +192,16 @@ border-radius: 0 0 6px 6px;
 }
 
 #navigation{
-	height:65px;
-margin:auto;
+	height:65px;	
 	width:900px;
 	position:fixed;
 	
+}
+
+#navigation-block{
+ margin-left:auto;
+ margin-right:auto;
+	width:900px;
 }
 
 #navigation ul li {
@@ -204,7 +212,6 @@ margin:auto;
 	width:225px;
 	text-align:center;
 
-	
 }
 
 #navigation ul li a{
