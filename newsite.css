@@ -190,9 +190,10 @@ border-radius: 0 0 6px 6px;
 
 #navigation{
 	height:65px;
+margin:auto;
 	width:900px;
-	margin-left:18.7%;
 	position:fixed;
+	
 }
 
 #navigation ul li {
@@ -228,7 +229,8 @@ color:white;
 #footer{
 
 	background:url(footer.jpg);
-	margin-left:18.7%;
+	margin-left:auto;
+margin-right:auto;
 	width:900px;
 	height:40px;
 	text-align:center;
