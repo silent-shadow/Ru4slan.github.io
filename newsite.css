@@ -46,7 +46,8 @@ background-attachment: fixed;
 
 #content{
 box-shadow: 0 0 10px rgba(255,0,0,0.9);	
- margin-left:18.7%;
+ margin-left:auto;
+ margin-right:auto;
 	width:900px;
 	background:white;
 		border-radius: 6px 6px 0 0;
@@ -55,7 +56,8 @@ box-shadow: 0 0 10px rgba(255,0,0,0.9);
 #shapka{
 
 padding-top:65px;
-	margin-left:18.7%;
+	margin-left:auto;
+margin-right:auto;
 	box-shadow: 0 0 10px white;
 width:900px;	
 }
@@ -65,10 +67,12 @@ width:900px;
 	width:250px;
 	float:right;
 	padding-right:5px;
-	padding-top:5px;
 	height:auto;
+	padding-top:10px;
 	
 }
+
+
 
 a:visited{
 	color:red;
@@ -144,7 +148,12 @@ a:link{
 	font-family: 'Roboto Slab', bold;
 font-size:25px;
 border-radius: 6px 6px 0 0;
-box-shadow: 0 0 10px black;	
+box-shadow: 0 0 8px black;	
+}
+
+.date{
+	float:left;
+	font-size:17px;
 }
 
 
@@ -152,7 +161,7 @@ box-shadow: 0 0 10px black;
 #News .osn{
 background:#E2E2E2;
 color:black;
-box-shadow: 0 0 10px black;
+box-shadow: 0 0 8px black;
 font-family: 'Prosto One', cursive;
 }
 
@@ -162,7 +171,7 @@ font-family: 'Prosto One', cursive;
 font-size:20px;	
 text-align:right;
 margin-bottom:15px;
-box-shadow: 0 0 10px black;
+box-shadow: 0 0 8px black;
 margin-bottom:30px;
 
 }
