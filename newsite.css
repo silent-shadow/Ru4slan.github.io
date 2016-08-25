@@ -154,6 +154,11 @@ border-radius: 6px 6px 0 0;
 box-shadow: 0 0 8px black;	
 }
 
+
+#News .name:hover{
+	background:url(newsbackhover.jpg);
+}
+
 .date{
 	float:left;
 	font-size:17px;
@@ -195,6 +200,7 @@ border-radius: 0 0 6px 6px;
 	height:65px;	
 	width:900px;
 	position:fixed;
+	font-size:21px;
 
 	
 }
@@ -221,9 +227,8 @@ padding: 0 10px;
 text-decoration:none;
 line-height: 65px;
 display: block;
-
+font-family: 'Russo One', sans-serif;
 height:65px;
-font-family: 'Ruslan Display', cursive;	
 color:white;
 
 }
