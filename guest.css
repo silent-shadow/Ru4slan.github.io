@@ -11,13 +11,7 @@
 
 
 
-#Posts .name{
-	background: url(newsback.jpg);
-	padding:5px;
-	font-family: 'Roboto Slab', bold;
-font-size:25px;	
 
-}
 
 #comment{
 	float:left;
@@ -39,11 +33,11 @@ padding-top:15px;
 #Post-data{
 
 height:25px;
- border-radius: 20px 20px 0 0;
-background:url(post.jpg);
-color:white;
+ border-radius: 10px 10px 0 0;
+	background: url(greennewszhover.jpg);
+color:black;
 padding-right:5px;
-box-shadow: 0 0 10px black;
+box-shadow: 0 0 10px green;
 
 }
 
@@ -75,12 +69,12 @@ font-size:20px;
 }
 
 #Posts .coment{
-	background: url(newsbackcomment.jpg);
+	background: url(orangecomment.jpg);
 	font-family: 'Roboto Slab', bold;
 font-size:18px;	
 text-align:right;
-border-radius: 0 0 6px 6px;
-box-shadow: 0 0 10px black;
+ border-radius: 0 0 10px 10px;
+box-shadow: 0 0 8px orange;
 }
 
 #Posts .coment::after{
