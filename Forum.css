@@ -1,66 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-body{
-	background:url(me3.jpg);
-background-attachment: fixed;
-}
-#content::before, #content::after {
-    content:"";
-    display:table;
-}
-#content::after {
-    clear:both;
-}
-#content {
-    zoom:1; /* For IE 6/7 (trigger hasLayout) */
-}
-
-#content{
-box-shadow: 0 0 10px rgba(255,0,0,0.9);	
- margin-left:18.7%;
-	width:900px;
-	background:white;
-		border-radius: 6px 6px 0 0;
-}
-
-#shapka{
-
-padding-top:65px;
-	margin-left:18.7%;
-	box-shadow: 0 0 10px white;
-width:900px;	
-}
-
-#News{
+#Forums{
 
 	width:900px;
 	float:left;
@@ -72,47 +11,27 @@ width:900px;
 }
 
 
-#News::after{
+#Forums::after{
 	margin:15px;
 }
 
-a:visited{
-	color:red;
-}
 
-a:link{
-	color:green;
-}
+#Forums{
 
-
-#News form{
-float:left;	
-}
-
-
-#News .name{
-	background: url(newsback.jpg);
-	padding:5px;
-	font-family: 'Roboto Slab', bold;
-font-size:25px;	
-}
-
-#comment{
+	width:900px;
 	float:left;
+	height:auto;
+	color:black;
+	padding-right:5px;
+	padding-top:5px;
+	
 }
 
-
-
-#News .coment::after{
-	content:" ";
-	background:white;
-	display:block;
-	width:100%;	
+#Forums::after{
+	margin:15px;
 }
 
-
-
-#Info-post{
+#ForumZagolovok{
 width:890px;
 height:25px;
 background:url(post.jpg);
@@ -122,7 +41,7 @@ color:white;
 
 }
 
-#Info-post ul li{
+#ForumZagolovok ul li{
 		float:left;
 	list-style-type:none;
 	text-align:center;	
@@ -131,7 +50,8 @@ color:white;
 		
 }
 
-#Post-text{
+
+#ForumTheme{
 
 height:60px;
 color:white;
@@ -140,7 +60,7 @@ width:890px;
 	box-shadow: 0 0 10px rgba(255,0,0,0.9);
 }
 
-#Post-text ul li{
+#ForumTheme ul li{
 		float:left;
 	list-style-type:none;
 	text-align:center;	
@@ -153,73 +73,48 @@ width:890px;
 	line-height:50px;
 }
 
-#Post-text:hover{
+#ForumTheme:hover{
 	background:url(themeblack2.jpg);
 }
 
 
-#Post-text ul li::after{
+#ForumTheme ul li::after{
 padding-top:5px;
 }
 
 
 
-#Post-text #themename{
+#ForumTheme #themename{
 width:300px;
 line-height:50px;	
 }
 
 
 
-#Info-post #forumname{
+#ForumZagolovok #forumname{
 	width:300px;
 }
 
 
 
-#Post{
+#ForumTable{
 	margin-left:5px;	
 }
-
-#Post-text p{
+#navigationForum-block{
+ margin-left:auto;
+ margin-right:auto;
+	width:900px;	
 }
 
 
-
-#News .osn{
-background:#D9D5D5;
-color:black;
-font-size:20px;	
-}
-
-#News .coment{
-	background: url(newsbackcomment.jpg);
-	font-family: 'Roboto Slab', bold;
-font-size:18px;	
-text-align:right;
-}
-
-#News .coment::after{
-	height:20px;
-}
-
-#News .coment a:visited{
-	color:#FFFFFF;
-}
-
-#News .coment a:link{
-	color:red;
-}
-
-#navigation{
+#navigationForum{
 	height:65px;
 	width:900px;
-	margin-left:18.7%;
 	position:fixed;
 	box-shadow: 0 0 10px white;	
 }
 
-#navigation ul li {
+#navigationForum ul li {
 	float:left;
 	position:relative;
 	list-style-type:none;
@@ -228,7 +123,7 @@ text-align:right;
 	text-align:center;	
 }
 
-#navigation ul li a{
+#navigationForum ul li a{
 color:#000;
 padding: 0 10px;
 text-decoration:none;
@@ -242,20 +137,8 @@ color:white;
 
 
 
-#navigation ul li a:hover{
+#navigationForum ul li a:hover{
 	background:url(menubuttonhover.jpg);
-}
-
-#footer{
-
-	background:url(footer.jpg);
-	margin-left:18.7%;
-	width:900px;
-	height:40px;
-	text-align:center;
-	border-radius: 0 0 6px 6px;
-		box-shadow: 0 0 10px orange;
-line-height:40px;		
 }
 
 
