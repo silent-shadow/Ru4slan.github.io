@@ -113,7 +113,8 @@ margin-bottom:10px;
 	height:65px;
 	width:900px;
 	position:fixed;
-	box-shadow: 0 0 10px white;	
+	box-shadow: 0 0 10px white;
+	font-size:21px;
 }
 
 #navigationForum ul li {
@@ -132,7 +133,7 @@ text-decoration:none;
 line-height: 65px;
 display: block;
 height:65px;
-font-family: 'Ruslan Display', cursive;	
+font-family: 'Russo One', sans-serif;	
 color:white;
 }
 
