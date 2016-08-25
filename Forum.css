@@ -51,6 +51,7 @@ color:white;
 }
 
 
+
 #ForumTheme{
 
 height:60px;
@@ -58,20 +59,28 @@ color:white;
 width:890px;
 	background:url(themeblack.jpg);
 	box-shadow: 0 0 10px rgba(255,0,0,0.9);
+	font-size:17px;
 }
 
 #ForumTheme ul li{
 		float:left;
 	list-style-type:none;
 	text-align:center;	
+					word-break: break-all;
 
+}
+.themelarge{	
+		width:auto;
+				text-align:center;
+				line-height:50px;
+}
+
+.nothemelarge{	
 		width:150px;
+		line-height:50px;
 
 }
 
-#firsts{
-	line-height:50px;
-}
 
 #ForumTheme:hover{
 	background:url(themeblack2.jpg);
