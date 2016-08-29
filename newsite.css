@@ -92,6 +92,9 @@ button{
 	color:white;
 }
 
+.radio-buttons input{
+	background:url(nocheck.png);
+}
 
 .button-slider1{
 	float:left;
@@ -134,7 +137,7 @@ opacity:1.0;
 }
 
 
-#quick_enter{
+#right-panel{
 
 	width:250px;
 	float:right;
@@ -157,17 +160,18 @@ a:link{
 }
 
 
-#quick_enter .zagolovok{
+#right-panel .zagolovok{
 	background:url(greenform.jpg);
 		box-shadow: 0 0 10px green;
 			border-radius: 6px 6px 0 0;
 			font-size:20px;
 			font-family: 'Ruslan Display', cursive;	
 			color:black;
+			text-align:center;
 
 }
 
-#quick_enter form .vvod {
+#right-panel form .vvod {
 	background:url(orangeback.jpg);
 	color:black;
 	padding-bottom:15px;
@@ -175,8 +179,7 @@ a:link{
 	font-size:20px;
 	box-shadow: 0 0 10px orange;
 }
-
-#quick_enter form .vvod input {
+#right-panel form .vvod input {
 
 	color:black;
 	padding-bottom:5px;
@@ -185,15 +188,16 @@ a:link{
 }
 
 
-#quick_enter form .enter{
+#right-panel form .enter{
 	background:url(greenform.jpg);
 	float:center;
 	border-radius: 0 0 6px 6px;
 	height:100%;
 	box-shadow: 0 0 10px green;
+	margin-bottom:30px;
 }
 
-#quick_enter form .enter input{
+#right-panel form .enter input{
 	float:center;
 	border-radius: 20px 20px 20px 20px;
 	height:30px;
@@ -331,6 +335,77 @@ margin-right:auto;
 line-height:40px;		
 }
 
+#mini-chat{
+	width:250px;
+	height:500px;
+	float:right;
+	background:#E2E2E2;
+	box-shadow: 0 0 8px black;
+	overflow: auto;
+}
+
+.comment-name{
+background:white;
+height:50px;
+width:220px;
+margin-top:5px;
+margin-bottom:5px;
+box-shadow: 0 0 8px black;	
+}
+
+.comment-name a:link{
+color:black;	
+}
+
+.comment-name a:visited{
+color:red;	
+}
+
+
+#mini-chat ul li{
+display:block;
+	list-style-type:none;
+	float:left;
+	padding:5px;
+
+	
+}
+
+.comment-osn{
+height:auto;
+width:220px;
+margin-top:5px;
+margin-bottom:20px;
+background:white;
+	box-shadow: 0 0 8px black;	
+}
+
+.comment-icon{
+	float:left;
+	width:32px;
+	height:32px;
+	background:url(userimage1.jpg);
+	margin-left:10px;
+	margin-top:5px;
+}
+
+#comment-form{
+	width:250px;
+	height:100px;
+	padding-top:30px;
+	float:left;
+}
+
+#comment-form textarea{
+	width:240px;
+	height:100px;
+}
+
+
+
+textarea{
+	resize:none;
+}
 
 
 
