@@ -72,9 +72,8 @@ margin-top:5px;
 .radio-buttons{
 	margin-left:auto;
 	margin-right:auto;
-	padding-left:50%;
-	margin-bottom:15px;
-	margin-top:15px;
+padding-top:36%;
+padding-left:43%;
 }
 
 .img1 { background:url(shapka3.jpg) center center no-repeat fixed;}
@@ -100,7 +99,7 @@ button{
 
 .button-slider2, .button-slider1{
 	height:350px;
-	opacity:0.5;
+	opacity:0.4;
 	background:black;
 	width:32px;
 	color:white;
