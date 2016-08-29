@@ -57,15 +57,83 @@ box-shadow: 0 0 10px green;
 
 #shapka{
 
-padding-top:65px;
+
 	margin-left:auto;
 margin-right:auto;
 	box-shadow: 0 0 10px green;
 width:900px;
-height:300px;
-background:url(shapka3.jpg) repeat-x center;
+height:350px;
+margin-top:5px;
+
+/**background:url(shapka3.jpg) repeat-x center;**/
 	
 }
+
+.radio-buttons{
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:50%;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+
+.img1 { background:url(shapka3.jpg) center center no-repeat fixed;}
+.img2 { background: url(shapka4.jpg) fixed;}
+.img3 { background: url(shapka5.jpg) center center no-repeat fixed; }
+	 
+.img3, .img1, .img2{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover; 
+}
+
+button{
+	background:url(greennewsz.jpg);
+	color:white;
+}
+
+
+.button-slider1{
+	float:left;
+}
+
+.button-slider2, .button-slider1{
+	height:350px;
+	opacity:0.5;
+	background:black;
+	width:32px;
+	color:white;
+	position:relative;
+}
+
+.button-slider2{
+	float:right;
+}
+
+
+.button-slider-right, .button-slider-left{
+    position: absolute;
+    top: 50%;
+    margin-top: -0.625em;
+width:32px;
+height:45px;	
+}
+
+.button-slider-right, .button-slider-left:hover{
+opacity:1.0;	
+}
+
+
+.button-slider-right{
+	background:url(slider_right.jpg);
+	float:right;
+}
+
+.button-slider-left{
+	background:url(slider_left.jpg);
+}
+
 
 #quick_enter{
 
@@ -205,6 +273,7 @@ border-radius: 0 0 6px 6px;
 	width:900px;
 	position:fixed;
 	font-size:21px;
+	padding-top:none;
 
 	
 }
@@ -213,7 +282,9 @@ border-radius: 0 0 6px 6px;
  margin-left:auto;
  margin-right:auto;
 	width:900px;
-background:none;	
+	height:60px;
+background:none;
+	
 }
 
 #navigation ul li {
