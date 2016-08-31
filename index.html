@@ -4,6 +4,7 @@
 <meta charset= "utf-8">
 <title>Главная</title>
 <link rel="stylesheet" href="newsite.css">
+<link rel="stylesheet" href="tabs/tabs.css">
 </head>
 <body>
 <div id="page">
@@ -36,9 +37,6 @@
 </div>
 
 <div class="radio-buttons"> 
-<!--<input type="radio" name="r" value="1" onclick="foo(this)">
-<input type="radio" name="r" value="2" onclick="foo(this)">
-<input type="radio" name="r" value="3" onclick="foo(this)">-->
 <input type="radio" name="r" id="check1" value="1" onclick="foo(this); checkk()">
 <input type="radio" name="r" id="check2" value="2" onclick="foo(this); checkk()">
 <input type="radio" name="r" id="check3" value="3" onclick="foo(this); checkk()">
@@ -49,11 +47,10 @@
 <div id="content">
 <div id="right-panel">
 <p align="center" class="zagolovok" >Вход</p>
-<form action="" method="GET">
+<form action="#" method="post" onsubmit="return checkForm(this)">
 <p class="vvod" align="center"><label for="EnterLogin">Логин:<br><input type="text" name="login" id="EnterLogin" placeholder="Введите логин"></p>
 
 <p class="vvod" align="center"><label for="EnterPassword">Пароль:</br></label><input type="password" name="password" id="EnterPassword" placeholder="Введите пароль"></p>
-
 <p class="enter" align="center"><input type="submit" name="submit" value="Войти!"> </p>
 </form>
 
@@ -118,7 +115,18 @@
 
 
 
+<ul class="tabs">
+<li id="tab1" class="tab_active" onclick="active_tab1()"><a href="#">Недавние новости</a></li>
+<li id="tab2" class="tab_noactive" onclick="active_tab2()"> <a href="#">Недавние темы на форуме</a></li>
+<li id="tab3" onclick="active_tab3()"><a href="#">Недавние комментарии</a></li>
+</ul>
+
+<div id="tab1_active">
+
+
 <div id="News">
+
+
 
 <p class="name"><a href="news3">Вселенную Mass Effect расширят книгами</a></p>
 <p class="osn">Издательство Titan Books опубликует сразу несколько книг во вселенной Mass Effect, которые должны будут связать старую трилогию, Mass Effect: Andromeda, а затем рассказать и о том, что произойдет после финала новой части серии. Всего планируется выпустить четыре книги, а автором первой оказалась Н. К. Джеймиш, лауреат престижных премий «Хьюго» и «Небьюла» за фантастический роман «Сотня тысяч королевств».
@@ -152,7 +160,12 @@
 
 </div>
 
+
+
 </div>
+
+<div id="tab2_active">Активна вкладка 2</div>
+<div id="tab3_active">Активна вкладка 3</div>
 
 
 
@@ -167,6 +180,7 @@ This site created by Ruslan Kaptsov.
 
 <script src="index.js"> </script>
 <script src="jquery.js"> </script>
+<script src="tabs/tabs.js"> </script>
 
 </body>
 </html>
