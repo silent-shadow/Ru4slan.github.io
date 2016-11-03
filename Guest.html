@@ -17,13 +17,13 @@
 <li><a href="meindex.html">Другой стиль</a></li>
 </ul>
 <ul>
-<li class="registration" ><a href="#">Регистрация</a></li>
+<li class="registration" ><a href="calc2.html">Калькулятор</a></li>
 
 </ul>
 </div>
 </div>
 
-<div id="shapka" class="img1">
+<div id="shapka" class="img1" >
 
 
 <div class="button-slider1">
@@ -37,16 +37,25 @@
 </div>
 
 
+<div class="radio-buttons"> 
+<!--<input type="radio" name="r" value="1" onclick="foo(this)">
+<input type="radio" name="r" value="2" onclick="foo(this)">
+<input type="radio" name="r" value="3" onclick="foo(this)">-->
+<input type="radio" name="r" id="check1" value="1" onclick="foo(this); checkk()">
+<input type="radio" name="r" id="check2" value="2" onclick="foo(this); checkk()">
+<input type="radio" name="r" id="check3" value="3" onclick="foo(this); checkk()">
+</div>
+
+
 </div>
 
 <div id="content">
 <div id="right-panel">
 <p align="center" class="zagolovok" >Вход</p>
-<form action="" method="GET">
+<form action="#" method="post" onsubmit="return checkForm(this)">
 <p class="vvod" align="center"><label for="EnterLogin">Логин:<br><input type="text" name="login" id="EnterLogin" placeholder="Введите логин"></p>
 
 <p class="vvod" align="center"><label for="EnterPassword">Пароль:</br></label><input type="password" name="password" id="EnterPassword" placeholder="Введите пароль"></p>
-
 <p class="enter" align="center"><input type="submit" name="submit" value="Войти!"> </p>
 </form>
 
@@ -56,8 +65,8 @@
 
 
 <div id="Posts">
-
-
+<a href="#" id="hide"  onclick="return false">Скрыть комментарии </a>
+<a href="#" id="show"style="display:none"  onclick="return false">Показать комментарии </a>
 
 <div id="Post">
 <div id="Post-data">
@@ -69,13 +78,12 @@
 </ul>
 </div>
 <div id="Post-text">
-<p class="osn">Первый комментарий.</p>
+<p class="osn"> dasdad</p>
 <p class="coment"> <a href="#">Ответить </a> </p>
 
 </div>
-</div>
 
-<div id="Post">
+
 <div id="Post-data">
 <ul >
 <li>Комментарий №2</li>
@@ -88,9 +96,9 @@
 <p class="osn">Обновление дизайна.</p>
 <p class="coment"> <a href="#">Ответить </a> </p>
 </div>
-</div>
 
-<div id="Post">
+
+
 <div id="Post-data">
 <ul >
 <li>Комментарий №3</li>
@@ -102,23 +110,23 @@
 <div id="Post-text">
 <p class="osn">Обновление дизайна №2.</p>
 <p class="coment"> <a href="#">Ответить </a> </p>
-
 </div>
 </div>
 
 
 <div id="commentaries">
-<form action="index.html" method="GET">
-<p >Оставить комментарий</p>
+<form name="form" id="form" method="POST" style="display:none" onsubmit="return false">
+<p>Оставить комментарий</p>
 <label for="EnterLogin">Ваше имя:</label><input type="text" name="login" id="EnterLogin" placeholder="Введите ваше имя">
 <br>
 <input type="checkbox" value="1">Согласен с условиями пользовательского соглашения
-<textarea name="comments" cols="60%" rows="10">
+<textarea id="textarea" name="comment" cols="60%" rows="10">
 
 </textarea>
 <br>
-<input type="submit">
+<input type="submit" name="send" value="Добавить комментарий" id="done">
 </form>
+<a href="#" onclick="return false" id="add_comment">Добавить комментарий </a>
 </div>
 
 <!--
@@ -152,6 +160,9 @@ This site created by Ruslan Kaptsov.
 
 
 <script src="index.js"> </script>
+<script src="jquery.js"> </script>
+<script src="jQuery_practice.js"> </script>
+
 
 </body>
 </html>
