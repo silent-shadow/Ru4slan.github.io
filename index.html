@@ -1,231 +1,252 @@
-<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="https://heroes.cdnvideo.ru/iframe/dev/feedback.v2.css?49" rel="stylesheet" type="text/css" media="all">
 
-<html>
-<head>
-<meta charset= "utf-8">
-<title>Главная</title>
-<link rel="stylesheet" href="newsite.css">
-<link rel="stylesheet" href="tabs/tabs.css">
+
+<style type="text/css">.mrc__translayer {background: rgba(255,255,255,0.7); position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 999999; display: none}
+.mrc__translayer:before {background: url(//my1.imgsmail.ru/mail/ru/images/my/compass/static/progress/preloader_grayonwhite.gif) no-repeat center center; bottom: 0; content: ""; display: block; left: 0; margin: auto; position: absolute; right: 0; top: 0; height: 12px; width: 64px;}
+.mrc__translayer_on iframe {box-shadow: 0 2px 5px rgba(0,0,0,0.35); visibility: hidden;}.mrc__translayer_on {background-image:none;}</style>
+
 </head>
-<body>
-<div id="page">
-<div id="navigation-block">
-<div id="navigation" align="center">
-<ul >
-<li > <a href="index.html">Главная</a></li>
-<li ><a href="Forum.html">Форум</a></li>
-<li ><a href="Guest.html">Гостевая</a></li>
-<li><a href="meindex.html">Другой стиль</a></li>
-</ul>
-<ul >
-<li class="registration" ><a href="calc2.html">Калькулятор</a></li>
+<body oncontextmenu="return false;" class="bg--heroes bg--heroes-fb">
 
-</ul>
-</div>
-</div>
-
-<div id="shapka" class="img1">
-
-
-<div class="button-slider1">
-
-<a onclick="back()" href="#" class="button-slider-left"></a>
-</div>
+	<div id="flash-wrapper" style="width:1000px">
+		<div id="flash-content" style="background: black; min-height: 640px; visibility: visible; width: 1000px; height: 640px; cursor: pointer;">
+		<canvas width="1000" height="640" style="transform: translateZ(0px); width: 1000px; height: 640px; margin-left: 0px; margin-top: 0px;"></canvas><input type="text" autocapitalize="off" autocomplete="off" style="position: absolute; opacity: 0; color: transparent; left: 0px; top: 50%; width: 1px; height: 1px; pointer-events: none; z-index: -10000000;"></div>
+	</div>
+<script type="text/javascript" src="pako.js"></script>
+	
+	
+	<style>
+					.customFooterContent {
+				width: 1000px;
+			}
+			.customFooterContent:before {
+				margin-left: -530px;
+			}
+			.customFooterContent:after {
+				margin-left: 500px;
+			}
+	</style>
 
 
-<div class="button-slider2">
-<a href="#" onclick="forward()" class="button-slider-right"></a>
-</div>
+<script>
+	var NXCurrentTimestamp = 1549022060;
+	var NXFeedbackLang = 'ru';
+	if (navigator.userAgent.match('Chrome')) {
 
-<div class="radio-buttons"> 
-<input type="radio" name="r" id="check1" value="1" onclick="foo(this); checkk()">
-<input type="radio" name="r" id="check2" value="2" onclick="foo(this); checkk()">
-<input type="radio" name="r" id="check3" value="3" onclick="foo(this); checkk()">
-</div>
+		window.addEventListener('focus', function(){
+			setTimeout(function() {
+				$('#custom_footer .button-menu').css('opacity', 0.01);
+				$('#custom_footer .button-menu').show();
+				setTimeout(function() {
+					$('#custom_footer .button-menu').css('opacity', 1);
+					$('#custom_footer .button-menu').hide();
+					// document.getElementById('crutch_pixel');
+				}, 1000);
+			}, 1000);
+		});
+	}
 
-</div>
+</script>
 
-<div id="content">
-<div id="right-panel">
-<p align="center" class="zagolovok" >Вход</p>
-<form action="#" method="post" onsubmit="return checkForm(this)">
-<p class="vvod" align="center"><label for="EnterLogin">Логин:<br><input type="text" name="login" id="EnterLogin" placeholder="Введите логин"></p>
+<div class="ru buttons--ru  network_mm" id="custom_footer" style="">
+	<div class="policy_terms policy terms fanterms">
+		<div class="form-header">
+			<button type="button" class="form-arrow"></button>
+			<button type="button" class="form-cross zd_close link_close" data-action="form-hide"></button>
+			<span class="form-title" data-form-search="Вопросы и ответы" data-form-feedback="Задать вопрос">Задать вопрос</span>
+		</div>
+		<div class="content"></div>
+	</div>
+	<div class="customFooterContent">
+		<style>
+			@keyframes NXiFrameDevBlink {
+				from {opacity:0.00;}
+				to {opacity:0.01;} 
+			}
+		</style>
+		<!-- <div id="crutch_pixel" style="animation: NXiFrameDevBlink infinite 1s;opacity:0.01;position:absolute;left:0;bottom:0;"></div> -->
 
-<p class="vvod" align="center"><label for="EnterPassword">Пароль:</br></label><input type="password" name="password" id="EnterPassword" placeholder="Введите пароль"></p>
-<p class="enter" align="center"><input type="submit" name="submit" value="Войти!"> </p>
-</form>
+		<div id="your_id">
+			<span>Ваш игровой ID:</span>
+			<input type="text" readonly="readonly" value="15093021438215810115">
+		</div>
 
-<p class="zagolovok">Мини-чат</p>
-
-<div id="mini-chat">
-
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.59</p></li>
-</ul>
-</p>
-<p class="comment-osn">6-ой комментарий</p>
-
-
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.56</p></li>
-</ul>
-<p class="comment-osn">5-ый комментарий</p>
-
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.48</p></li>
-</ul>
-<p class="comment-osn">4-ый комментарий</p>
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.40</p></li>
-</ul>
-<p class="comment-osn">3-ий комментарий</p>
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.37</p></li>
-</ul>
-<p class="comment-osn">2-ой комментарий</p>
-
-<ul class="comment-name">
-<li class="comment-icon"></li>
-<li> <a href="Ru4slan">Ru4slan</a><p>29.08.16 в 21.30</p></li>
-</ul>
-<p class="comment-osn">1-ый комментарий</p>
-
-
-
-
-</div>
-
-<div id="comment-form">
-<textarea name="comments-minichat">
-
-</textarea>
-<p><button value="Отправить">Отправить</button></p>
-</div>
-
+		
+		
+		
+		
+					<a id="button_q" class="button button--feedback" href="#" data-action="form-show"></a>
+			<a id="button_g" class="button button--group" href="https://my.mail.ru/community/moba/" target="_blank"></a>
+		
+		
+					<a id="button_i" class="button button--invite" href="#"></a>
+		
+					<a target="_blank" class="channel-watch button button--ytchannel has_new_videos" data-action="channel-show" href="https://www.youtube.com/c/HeroWars?sub_confirmation=1">
+				<span class="ytchannel_new_video"></span>
+			</a>
+		
+					<span id="button_m" class="button button--legal legal--russian" href="#">
+				<span class="button-menu" style="opacity: 1; display: none;">
+					<a id="link_policy" href="#">Политика<br>конфиденциальности</a>
+					<a id="link_terms" href="#">Пользовательское<br>соглашение</a>
+					<a id="link_fan_terms" href="#">Фанатское<br>соглашение</a>
+				</span>
+			</span>
+						
+		
+		
+			</div>
 </div>
 
 
 
-<ul class="tabs">
-<li id="tab1" class="tab_active" onclick="active_tab1()"><a href="#">Недавние новости</a></li>
-<li id="tab2" class="tab_noactive" onclick="active_tab2()"> <a href="#">Недавние темы на форуме</a></li>
-<li id="tab3" onclick="active_tab3()"><a href="#">Недавние комментарии</a></li>
-</ul>
+	<script src="loader.js" type="text/javascript" charset="utf-8"></script>
+	<script src="combined.dev.-sockets.js" type="text/javascript"></script>
+	<!--<script src="web_socket.js"></script>
+	<script src="progrestar.all.js" type="text/javascript"></script>
+	<script src="Pushd4ClientWar.js" type="text/javascript"></script-->
 
-<div id="tab1_active">
+	<!--<script type="text/javascript">
+		try {
+			progrestar.registerModule('errord', new progrestar.ErrordClient('mail','746862','15093021438215810115','https://error.nextersglobal.com/client/'));
+			progrestar.registerModule('stat', new progrestar.StatClient('mail','746862','15093021438215810115','2-12-85-06','54-46','https://stat.nextersglobal.com/collector/client/'));
+		}catch(e){}
 
+		window.onerror = function(message, source, lineno, colno, error) {
+			var err = '';
+			err += message + '\n';
+			err += 'source: ' + source  + '\n';
+			err += 'line: ' + lineno + '\n';
+			err += 'col: ' + colno + '\n';
+			err += 'stack: ' + error.stack.toString();
+			NXSendErrorDString(err);
+		}
+		function NXJsLoadError(that) {
+			NXSendErrorDString('Error loading heroes.js, try fallback');
+		}
+		function NXSendErrorDString(text) {
+			progrestar.getModule('errord').send({
+				url: '',
+				status: 0,
+				fversion: 'iframe',
+				appversion: '',
+				errorKey: 'JS iFrame Error',
+				request: 'JS iFrame Request',
+				response: text
+			});
+		}
+	</script>-->
 
-<div id="News">
+	<!--<script src="http://herowarssss.ru/herowars.js" onerror="NXJsLoadError()" crossorigin="anonymous" type="text/javascript"></script>-->
+<!--<script src="require.js"> </script>-->
+	<script type="text/javascript">
+		var NXFlashVars = {"is_app_user":"1","session_key":"ea3ed1cb1d2a374dda6e53cd36490b4","vid":"12115093021438215810115","oid":"12115093021438215810115","app_id":"746862","authentication_key":"ps-z4dPy6Tk-1549022060-146.120.183.138-08aa700794c3c5c11cd3fd3d6659b6ee","session_expire":"1548259943","ext_perm":"emails,payments","sig":"821dff73600df0191795035e04841d9a","window_id":"CometName_4c69cf8867ef2a29437758071a358819","referer_type":"hp","requestLoadingInfoTimeout":3000,"country_code":"RU","geoip_city":"","sys_id":2,"network":"mail","uid":"12115093021438215810115","interface_lang":"ru","game_url":"https://my.mail.ru/apps/746862","group_url":"https://my.mail.ru/community/moba/","rpc_url":"https://heroes-mm.nextersglobal.com/api/","static_url":"https://heroes.cdnvideo.ru/","preloader":"mail/v043/MmLoader.swf?v=3","index_url":"https://heroes.cdnvideo.ru/mm/index.v0379.json.gz","ident":"heroes","preloader_asset":"preloader/preloader_default.swf?v=1","stat_url":"https://stat.nextersglobal.com/collector/client/","error_url":"https://error.nextersglobal.com/client/","browser":"chrome"};
+		var haxeDom = document.getElementById('flash-content');
 
+		if (NXFlashVars === '') {
+			NXSendErrorDString('NXFlashVars is empty');
+		}
 
+		haxeDom.innerHTML = '';
+		haxeDom.style.visibility = 'visible';
+		haxeDom.style.width = '1000px';
+		haxeDom.style.height = '640px';
 
-<p class="name"><a href="news3">Вселенную Mass Effect расширят книгами</a></p>
-<p class="osn">Издательство Titan Books опубликует сразу несколько книг во вселенной Mass Effect, которые должны будут связать старую трилогию, Mass Effect: Andromeda, а затем рассказать и о том, что произойдет после финала новой части серии. Всего планируется выпустить четыре книги, а автором первой оказалась Н. К. Джеймиш, лауреат престижных премий «Хьюго» и «Небьюла» за фантастический роман «Сотня тысяч королевств».
+		if (window.lime) {
+			lime.embed('heroeshx', 'flash-content', 1000, 640, {parameters: {} });
+		} else {
+			$.ajax({
+				//url: 'https://heroes.cdnvideo.ru/mm/v0375/assets/heroes.js',
+				//url: 'https://raw.githubusercontent.com/Ru4slan/Ru4slan.github.io/master/herowars.js',
+				//url: 'http://herowarssss.ru/herowarss.js',
+				url:"herowars.js",
+				dataType: 'text',
+				success: function(data, status) {
+					eval(data);
+					lime.embed('heroeshx', 'flash-content', 1000, 640, {parameters: {} });
+				},
+				error: function(xhr, desc, er) {
+					var text = 'Error loading heroes.js, again.';
+					text += ' Status: '+xhr.readyState;
+					text += ' Text: '+xhr.statusText;
+					text += ' State: '+xhr.state();
+					NXSendErrorDString(text);
+				}
+			});
+		}
+	</script>
 
-Известны и примерные сроки выхода книг. Первая будет называться Mass Effect: Andromeda — Initiation и выйдет уже в этом августе, вторая и третья появятся в марте и сентябре 2017, а последний роман стоит ждать в сентябре 2018 — его автором станет Мак Уолтерс, креативный директор Mass Effect: Andromeda.</p>
-<p class="date">28.08.16 22:14</p><p class="coment"> <a href="#">Комментировать </a> </p>
+<!--	<script>
+		if (typeof navigator.userAgent !== 'undefined') {
+			if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Version/5.') !== -1) {
+				WEB_SOCKET_FORCE_FLASH = true;
+			}
+			if (typeof window.chrome !== 'undefined') {
+				var chromeVersion = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+		
+				if (chromeVersion && chromeVersion[2] && parseInt(chromeVersion[2]) < 14 ) {
+					WEB_SOCKET_FORCE_FLASH = true;
+				}
+			}
+		}
+		WEB_SOCKET_SWF_LOCATION = 'https://heroes.cdnvideo.ru/iframe/swf/WebSocketMainInsecure.swf';
+		WEB_SOCKET_DEBUG = true;
+	</script>-->
 
+	<script src="https://heroes.cdnvideo.ru/iframe/dev/yt_new_video.js?5"></script>
+	<script src="https://heroes.cdnvideo.ru/iframe/dev/feedback.v2.js?34" type="text/javascript"></script>
 
-<p class="name"><a href="news1">Mass Effect — Переиздания не будет</a> </p>
-<p class="osn">Разговоры о возможном переиздании трилогии Mass Effect для консолей нового поколения оказались лишь слухами.
+	
 
-Исполнительный вице-президент EA Патрик Содерлунд в своем комментарии дал четко понять, что переиздания не будет: 
+	<script type="text/javascript">
+	/*	function thisMovie(name) {
+			return window.document[name] || window[name] || document.embeds[name];
+		}
+		$(document).ready(function(){
+						window.feedback = new Feedback.Controller({"policyEndPoint":"terms/policy_heroes.php","termsEndPoint":"terms/terms_heroes.php","fantermsEndPoint":"terms/fan_terms_heroes.php","url":"../../feedback/v2/zendesk/index.php?request="});
+		});
+		function doFrameResizeToEven() {
+			var width = $('#flash-wrapper').width();
+			if (width % 2) {
+				$('#flash-app').width(width-1);
+			} else {
+				$('#flash-app').width(width);
+			}
+		}
+		$(window).resize(function() {
+			doFrameResizeToEven();
+		});
 
-«Я не буду лгать и говорить, что мы не думали об этом. Но данный проект по нашему мнению не достаточно весом, чтобы тратить на него свои ресурсы. Ведь лучше работать над новым IP, который есть у BioWare, чем заниматься переизданием Mass Effect?»
+		$(document).ready(function(){
+			doFrameResizeToEven();
+			$('#button_i').on('click', function(e){
+				e.preventDefault();
+				mailru.app.friends.invite();
+			});
+		});
 
-Также Содерлунд отметил, что переиздание это очень удачная идея, но иногда память о старых играх, как таковых, является важной частью нашей жизни:
+		window.onload = function() {
+			try {
+				progrestar.setFlashMovie(thisMovie('flash-app'));
 
-«Я не знаю как вы, но когда я играю в игры, я хочу запомнить их такими, какие они есть. Если я начну играть в старые игры, то первое, что придет ко мне в голову это будет: "Серьезно? Это так оно было?" На мой взгляд, это потрясающе». </p>
-<p class="date">21.08.16 21:54</p><p class="coment"> <a href="#">Комментировать </a> </p>
+				progrestar.registerModule(
+					'pushd',
+					new progrestar.Pushd4Client(
+						['wss://pushd.nextersglobal.com:443/websocket'],
+						'mm',
+						'746862',
+						'15093021438215810115',
+						"1549022060:W+eOMybJ:Gd1hewhbiy54lUe7x45N6g"					)
+				);
 
+				progrestar.getModule('pushd').connect();
 
+			} catch(e) {}
+		};*/
+	</script>
 
-<p class="name"><a href="news2">Mass Effect — Возможная дата выхода фильма</a></p>
-<p class="osn">Появилась очень интересная новость для поклонников серии Mass Effect. Universal Pictures анонсировала на  4 ноября 2016 года так называемый «Тайный проект», финансируемый совместно с Legendary Pictures,  которая владеет правами на экранизацию вселенной Mass Effect.
+		
 
-Никаких подробностей об этом нет, за исключением того, что фильм будет абсолютно новым, и не ремейком, и не сиквелом какого-либо другого фильма.
-
-Вероятность, что речь идет о фильме Mass Effect, конечно невысокая, но все возможно… </p>
-
-<p class="date">20.08.16 22:14</p><p class="coment"> <a href="#">Комментировать </a> </p>
-
-</div>
-
-
-
-</div>
-
-<div id="tab2_active">
-<div id="Hot-themes">
-
-<div id="zagolovok-tab2">
-<ul>
-<li >Название темы</li>
-<li >Комментариев</li>
-<li >Автор</li>
-</ul>
-</div>
-
-<div id="themes-tab2">
-<ul >
-<li >FAQ</li>
-<li >25</li>
-<li >Ru4slan</li>
-</ul>
-
-<ul >
-<li >FAQ</li>
-<li >25</li>
-<li >Ru4slan</li>
-</ul>
-
-<ul >
-<li >FAQ</li>
-<li >25</li>
-<li >Ru4slan</li>
-</ul>
-
-<ul >
-<li >FAQ</li>
-<li >25</li>
-<li >Ru4slan</li>
-</ul>
-</div>
-
-
-</div>
-
-
-
-
-</div>
-<div id="tab3_active">Активна вкладка 3</div>
-
-
-
-
-</div>
-
-<div id="footer">
-Этот сайт создал Руслан Капцов.
-This site created by Ruslan Kaptsov.
-
-</div>
-
-
-</body>
-<script src="index.js"> </script>
-
-<script src="tabs/tabs.js"> </script>
-<script  src="jquery.js"> </script>
-</html>
+</body></html>
