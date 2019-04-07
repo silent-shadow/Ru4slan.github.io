@@ -1,0 +1,648 @@
+function warn(msg) {
+    if (!window.console || !console.log) return;
+    console.log(msg);
+}
+
+function ajaxRecommendedOrFriends(event) {
+    event.stop();
+    if (event.findElement().tagName != 'A') return;
+
+    var parts = this.id.split('more_');
+    var id = parts[1];
+
+    var link       = this.down('a');
+    var error_elem = this.down('i');
+    var preloader  = this.down('img');
+    if (!link || !error_elem || !preloader) {
+        warn('not all elements found');
+        return;
+    }
+
+    link.hide();
+    error_elem.hide();
+    preloader.show();
+
+    var ajax_func = (id == 'recommended') ? 'perl_application_get_recommended' : 'perl_application_get_friendapp';
+    var ref = (id == 'recommended') ? '?ref=mrf' : '?ref=fr'
+
+    new Ajax.Request('/cgi-bin/my/ajax?ajax_call=1&func_name='+ajax_func, {
+        method: 'post',
+        postBody: 'data=' + JSON.stringify([link.readAttribute('current')]),
+        onComplete: function (transport) {
+            var data = transport.responseText.evalJSON(true);
+            if (data[1] != 'OK') {
+                if (transport.request.options.onFailure)
+                    transport.request.options.onFailure(transport);
+                return;
+            }
+
+            data = data[2];
+            $(id + '_image').parentNode.href = '/apps/' + data.ID + ref;
+            if (data.Pic) {
+                $(id + '_image').style.backgroundImage = 'url('+data.Pic+')';
+            } else {
+                $(id + '_image').style.backgroundImage = 'url(/mail/ru/images/app/app_120_60.gif)';
+            }
+            var html = '<div class="app-name mf_t14 mf_bold mb5 mf_ohd"><a href="/apps/' + data.ID + ref + '" class="mf_dI">'+data.Name+'</a></div>';
+            if (data.Description) {
+                html += '<div class="app-desc mb5 mf_ohd">'+data.Description+'</div>';
+            }
+            if (id == 'recommended') {
+                html += '<img width="1" heigth="1" style="display: none" src="//rs.mail.ru/d234428.gif?rand=' + Math.random() + '" />';
+            }
+            $(id + '_text').update( html );
+
+            preloader.hide();
+            error_elem.hide();
+            link.writeAttribute('current', data.ID).update('ещё').show();
+        },
+        onFailure: function (transport) {
+            preloader.hide();
+            error_elem.show();
+            link.update('повторить').show();
+        }
+    })
+}
+
+/* ie first process event then check checkbox...
+   ff first check then process event. So make new prop */
+function get_checked(elem) {
+    return parseInt( $(elem).readAttribute('_checked') ) ? 1 : 0;
+};
+function set_checked(elem, on) {
+    on = on ? 1 : 0;
+    elem.writeAttribute('_checked', on);
+    elem.checked = on;
+};
+
+// commons_boxes is Array, all_box is refer to input
+function tieCheckboxes(commons_boxes, all_box) {
+    if (!Object.isElement(all_box) || !Object.isArray(commons_boxes)) return;
+
+    var common_handle = function (event) {
+        var t = $(this);
+        t.writeAttribute('_checked', get_checked(t) ? 0 : 1);
+        if (commons_boxes.size() == commons_boxes.findAll( get_checked ).size() ) {
+            set_checked(all_box, 1);
+        } else {
+            set_checked(all_box, 0);
+        }
+    }
+
+    commons_boxes.each(
+        function (cbox) {
+            set_checked(cbox, cbox.checked); // default
+            cbox.observe('click', common_handle);
+        }
+    );
+
+    all_box.observe('click', function (event) {
+        var newState = get_checked(all_box) ? 0 : 1;
+        commons_boxes.each(
+            function (cbox) {
+                set_checked(cbox, newState);
+            }
+        );
+        all_box.writeAttribute('_checked', newState);
+    });
+
+}
+
+function showAppSettings(elem, appid, close, in_hid_ref, options, magic_number_a, magic_number_b ) {
+    if(!magic_number_a || !magic_number_b) return false;
+    
+    winModal.get('app_add').page_appcanvas = 1;
+    winModal.get('app_add').wm_form.form_action = '/cgi-bin/app/inst';
+    winModal.get('app_add').wm_reset.button_value = 'Отмена';
+    winModal.get('app_add').wm_submit.button_value = 'Добавить';
+    winModal.get('app_add').wm_submit.button_type = 'submit';
+    
+    winModal.get('app_add').wm_reset.button_onclick  = 1;
+    winModal.get('app_add').onclick_reset             = function(){
+        mailru.server.events.requireInstallation.onDialogClose();
+        winModal.get('app_add').down();    
+    }
+    winModal.get('app_add').returnContent = function( params ) {
+        var in_hid_ref = params.in_hid_ref;
+        var appid      = params.appid;
+        var applogo    = params.applogo;
+        
+        var chbx_all    = new Element('input', {'type':'checkbox','value':1}).writeAttribute('_checked', 0);
+        var chbx_notify = $(chbx_all.cloneNode(false)).writeAttribute('name', 'uaflag_notify');
+        var chbx_wtnew  = $(chbx_all.cloneNode(false)).writeAttribute('name', 'uaflag_news');
+        var chbx_widgt  = $(chbx_all.cloneNode(false)).writeAttribute('name', 'uaflag_widget');
+        var news = chbx_wtnew, widget = chbx_widgt, notification = chbx_notify;
+        if (options.checked) {
+            for (var permission in options.checked) {
+                switch (options.checked[permission]) {
+                    case 'widget':
+                        $(widget).writeAttribute('checked', 'checked');
+                        $(widget).defaultChecked = true;
+                        break;
+                    case 'notification':
+                        $(notification).writeAttribute('checked', 'checked');
+                        $(notification).defaultChecked = true;
+                        break;
+                }
+            }
+            if(options.checked.length == 3){
+                $(chbx_all).writeAttribute('checked', 'checked');
+            }
+        }
+        
+        if (in_hid_ref == 'undefined') in_hid_ref = 'error';
+
+        tieCheckboxes([chbx_notify, chbx_wtnew, chbx_widgt], chbx_all);
+
+        var settingsDiv = new Element('div').addClassName('app-actions').update(
+            '<div class="mb25 mf_oH2"><div class="copy_screen"><img id="app_logo" src="'+ applogo +'" /></div>'+
+            '<h3>Установка приложения</h3>'+
+            '<p class="mf_t14">Установка приложения даёт ему возможность получать информацию с вашей личной страницы и посылать уведомления</p></div>'+
+            '<h4 class="m0 mb5">Разрешить приложению</h4>'
+        ).insert(
+            new Element('input', { 'type': 'hidden', 'name': 'appid' }).setValue(appid)
+        ).insert(
+            new Element('input', { 'type': 'hidden', 'name': 'ref' }).setValue( in_hid_ref )
+        ).insert(
+            new Element('input', { 'type': 'hidden', 'name': 'magic_number_a' }).setValue( magic_number_a )
+        ).insert(
+            new Element('input', { 'type': 'hidden', 'name': 'magic_number_b' }).setValue( magic_number_b )
+        ).insert(
+            new Element('label', { 'for': chbx_notify.identify() }).insert(
+                chbx_notify
+            ).insert(' посылать мне уведомления')
+        ).insert(
+            new Element('label', { 'for': chbx_wtnew.identify() }).insert(
+                chbx_wtnew
+            ).insert(' делать записи в "Что нового"')
+        ).insert(
+            new Element('label', { 'for': chbx_widgt.identify() }).insert(
+                chbx_widgt
+            ).insert(' разместить виджет в профиле')
+        ).insert(
+            new Element('label', { 'for': chbx_all.identify() }).insert(
+                chbx_all
+            ).insert(' <b>все действия</b>')
+        );
+        return settingsDiv;
+    }
+    winModal.get('app_add').up({appid: appid, appname: options.name, applogo: options.logo, in_hid_ref: in_hid_ref})
+}
+
+// event handler for closing settingsDiv on document.click
+function closeAppSettings (event) {
+    if (!event.isLeftClick()) return;
+    if (!event.findElement('div.app-actions') && !event.findElement('.app-settings-opener')) {
+        showAppSettings(null, null, 'close');
+    }
+}
+
+// sortable divs. Only Y axis.
+// all draggables must have dummy parent and that parents must be siblings.
+function Sortable(params) {
+
+    var self = this;
+
+    // variables           defaults
+    this.draggables      = {};
+    this.draggable       = null;
+    this.draggableHeight = null;
+    this.refY            = null;
+    this.sequence        = {};
+
+    this.iterateDraggables = function (iterator) {
+        Object.keys(self.draggables).each(
+            function (dragId) {
+                iterator($(dragId));
+            }
+        )
+    };
+
+    // handlers. `this` keyword will contain Sortable object
+    this.onDragStart = function (event) { };
+    this.onDragStop  = function (event) { };
+    this.onDragMove  = function (event) { };
+
+    this.dragStart = function (event) {
+        if (!event.isLeftClick()) return;
+        event.stop();
+
+        self.draggable = $(this);
+        self.draggableHeight = self.draggable.getDimensions().height;
+        self.refY = self.draggable.positionedOffset().top - event.pointerY();
+
+        Event.observe(document, 'mouseup', self.dragStop);
+
+        self.draggable.absolutize();
+
+        Event.observe(document, 'mousemove', self.dragMove);
+
+        self.onDragStart.call(self, event);
+    };
+
+    this.dragStop = function (event) {
+        Event.stopObserving(document, 'mouseup', self.dragStop);
+        Event.stopObserving(document, 'mousemove', self.dragMove);
+
+        if (self.trackSequence) {
+            self.sequence = {};
+            var integer = 0;
+
+            var superparent = self.draggable.up().up();
+            superparent.immediateDescendants().each(
+                function (dummy_parent) {
+                    if ( !self.draggables[dummy_parent.firstDescendant().identify()] ) {
+                        return;
+                    }
+                    self.sequence[dummy_parent.readAttribute('sortid')] = ++integer;
+                }
+            );
+        }
+
+        self.draggable.setStyle('position: static; width: 100%; height: auto; top: 0; left: 0;');
+
+        if (self.scroller) {
+            self.stopScrolling();
+        }
+
+        self.onDragStop.call(self, event);
+
+        self.draggable = null;
+    };
+
+    this.dragMove = function (event) {
+        event.stop();
+
+        self.doMove(event.pointerY());
+
+        self.onDragMove.call(self, event);
+    };
+
+    this.doMove = function (deltaY) {
+        var top = parseInt(self.refY + deltaY);
+        self.draggable.setStyle({ top: top + 'px' });
+        var mid = top + self.draggableHeight/2; // convenience
+        var bot = top + self.draggableHeight;   // convenience
+
+        self.iterateDraggables(
+            function (drag) {
+                if (drag.identify() == self.draggable.identify()) return;
+
+                var drag_middle = drag.positionedOffset().top + drag.getDimensions().height/2;
+                if (top < drag_middle && drag_middle < mid) {
+                    drag.up().insert( { 'before': self.draggable.up().remove() } );
+                    throw $break;
+                }
+                if (bot > drag_middle && drag_middle > mid) {
+                    drag.up().insert( { 'after': self.draggable.up().remove() } );
+                    throw $break;
+                }
+            }
+        );
+
+        if (self.scroller) {
+            self.stopScrolling();
+            var scroll_top = document.viewport.getScrollOffsets().top;
+            var speed, height;
+
+            if (self.scroller == window) {
+                if (window.innerHeight) {
+                    height = window.innerHeight;
+                } else if (document.documentElement && document.documentElement.clientWidth) {
+                    height = document.documentElement.clientHeight;
+                } else {
+                    height = document.body.offsetHeight;
+                }
+            } else {
+                // not needed now, code and test later if needed
+                height = 0;
+            }
+
+            if (top < scroll_top + self.scrollSensitivity.top) {
+                speed = top - (scroll_top + self.scrollSensitivity.top);
+            } else if (bot > scroll_top + height - self.scrollSensitivity.bot) {
+                speed = bot - (scroll_top + height - self.scrollSensitivity.bot);
+            }
+            self.startScrolling(speed, deltaY);
+        }
+    };
+
+    // adopted from script.aculo.us
+    this.startScrolling = function (speed, startY) {
+        if (!speed) return;
+        self.scrollVelocity = speed * self.scrollSpeed;
+        self.lastScrolled   = new Date();
+        self.scrollStartY   = startY;
+        self.scrollInterval = setInterval(self.doScrolling, 10);
+    };
+
+    this.stopScrolling = function () {
+        if (self.scrollInterval) {
+            clearInterval(self.scrollInterval);
+            self.scrollInterval = null;
+            self.scrollStartY   = null;
+        }
+    };
+
+    this.doScrolling = function () {
+        var current = new Date();
+        var delta = current - self.lastScrolled;
+        self.lastScrolled = current;
+
+        var deltaY = self.scrollVelocity * delta / 1000;
+        if (!deltaY) return;
+
+        if (self.scroller == window) {
+            var pos = document.viewport.getScrollOffsets();
+            self.scroller.scrollTo(pos.left, pos.top + deltaY);
+        } else {
+            self.scroller.scrollTop += deltaY;
+        }
+
+        if (!self.scrollStartY) return;
+        self.doMove(self.scrollStartY + deltaY);
+    };
+
+    ///////////////////////////////////////////////////////////////////////////
+    // init
+    var cont = $(params.container);
+    if (!cont) {
+        warn('Sortables: no container specified');
+        return;
+    }
+
+    this.trackSequence = params.trackSequence;
+
+    if (Object.isFunction(params.onDragStart))
+        this.onDragStart = params.onDragStart.bind(self);
+    if (Object.isFunction(params.onDragStop))
+        this.onDragStop  = params.onDragStop.bind(self);
+    if (Object.isFunction(params.onDragMove))
+        this.onDragMove  = params.onDragMove.bind(self);
+
+    if (params.scroller) {
+        if (params.scroller == 'window') {
+            params.scroller = window;
+        }
+        if ($(params.scroller)) {
+            self.scroller              = $(params.scroller);
+            self.scrollSensitivity     = {};
+            self.scrollSensitivity.top = params.scrollSensitivity || 40;
+            self.scrollSensitivity.bot = self.scrollSensitivity.top;
+            if (document.body.scrollWidth > document.body.clientWidth) {
+                self.scrollSensitivity.bot += 18; // some average height of scrollbar
+            }
+            self.scrollSpeed           = params.scrollSpeed || 15;
+        }
+    }
+
+
+    var draggables = params.childsSelector ? cont.select(params.childsSelector) : cont.immediateDescendants();
+
+    var integer = 0;
+    draggables.each(
+        function (draggable) {
+            var handle;
+            if (params.handleSelector) {
+                if (Object.isString(params.handleSelector)) {
+                    var handle = draggable.select(params.handleSelector)[0];
+                } else if (Object.isFunction(params.handleSelector)) {
+                    var handle = params.handleSelector(draggable);
+                }
+            } else {
+                handle = draggable;
+            }
+            if (!handle) {
+                warn('Sortables: handle not found');
+                return;
+            }
+            var dummy_parent = draggable.up();
+            if (dummy_parent == cont) {
+                warn('Sortables: container is draggable immediate parent! Draggable must have dummy parent');
+                return;
+            }
+            if (dummy_parent.immediateDescendants().length > 1) {
+                warn('Sortables: Draggable must be the only child of it dummy parent');
+                return;
+            }
+
+            if (self.trackSequence)
+                self.sequence[dummy_parent.readAttribute('sortid')] = ++integer;
+
+            self.draggables[draggable.identify()] = handle;
+        }
+    );
+
+    if (!Object.keys(self.draggables).length) {
+        warn('Sortables: no Draggables found');
+        return;
+    }
+
+    // check if all draggable parents are siblings
+    var superparent = $(Object.keys(self.draggables)[0]).up().up();
+    var temp = superparent.immediateDescendants().filter(
+        function (dummy_parent) {
+            return self.draggables[dummy_parent.firstDescendant().identify()];
+        }
+    )
+    if (temp.length != Object.keys(self.draggables).length) {
+        warn('Sortables: all Draggables dummy parents must be siblings');
+        return;
+    }
+
+    // here we go
+    self.iterateDraggables(
+        function (drag) {
+            var handle = self.draggables[drag.identify()];
+            handle.observe('mousedown', self.dragStart.bind(drag));
+        }
+    );
+
+}
+
+function removeReviewArea(event) {
+    if (!window.reviewArea) return;
+    clearTimeout(window.reviewAreaTimeout);
+    window.reviewArea.remove();
+    window.reviewArea = null;
+    if ($('app_container')) {
+        var f = $('app_container').firstDescendant();
+        if (f) f.style.height = f.readAttribute('height') + 'px';
+   }
+}
+
+function showReviewArea(link, appid, appName) {
+    if (appid === undefined && appName === undefined) {
+        appid = link.getAttribute('data-app-id');
+        appName = link.getAttribute('data-app-name');
+    }
+
+    if (!document.loaded) {
+        document.observe('dom:loaded', function() { showReviewArea(link) });
+        return;
+    }
+    if (window.reviewArea) {
+        removeReviewArea();
+        return;
+    }
+    var set_error = function() {
+        $('wrp_submit').select('em')[0].update('Повторить');
+        errorSpan.removeClassName('white_preloader').addClassName('mf_iWarning mf_red').update('Произошла ошибка');
+        txar.enable();
+    };
+    var capcha_handler = function(cID, cAnswer) {
+        Common.ClientServer.post('perl_application_review_submit', [cID || false, cAnswer || false, appid, voteDiv.readAttribute('setVote'), txar.value], {
+            success: succes_handler,
+            error: set_error
+        });
+    };
+    var succes_handler = function(data) {
+        // disable voting
+        var wrpSubmit = $('wrp_submit'),
+            wrpCancel = $('wrp_cancel');
+
+        starsDiv.insert( { 'after': new Element('div').setStyle('background-color: white; position: absolute; width: 100%; height: 100%;').setOpacity(0.01).absolutize() } );
+        if (data.length && data[0] === 'captcha') {
+            if (!data[1]) {
+                set_error();
+            }
+            // dirty hack
+        } else {
+            reviewText  = txar.value;
+            reviewVote  = voteDiv.readAttribute('setVote');
+            winModal.get('app_feedback').done = true;
+            contentDiv.style.height = contentDiv.offsetHeight + 'px';
+            contentDiv.update('<strong>Спасибо, Ваша оценка принята!</strong>');
+            if (wrpSubmit && wrpSubmit.update) {
+                wrpSubmit.update('Закрыть');
+            }
+            if (wrpCancel && wrpCancel.hide) {
+                wrpCancel.hide();
+            }
+            window.reviewAreaTimeout = setTimeout(function() {
+                winModal.get('app_feedback').done = false;
+                winModal.get('app_feedback').down();
+            }, 3000);
+        }
+    };
+    var vote_handler = function(e) {
+        e.stop();
+        if (winModal.get('app_feedback').done === true) {
+            winModal.get('app_feedback').done = false;
+            winModal.get('app_feedback').down();
+            clearTimeout(window.reviewAreaTimeout);
+        }
+        errorSpan.removeClassName('mf_iWarning mf_red').update('Сохранение');
+        //задизейблиь кнопку
+        txar.disable();
+        capcha_handler();
+    };
+
+
+
+    var dialog = winModal.get('app_feedback');
+    link = $(link);
+
+    var txar = new Element('textarea').setStyle('width: 100%; height: 120px').addClassName('wrp-textarea');
+    txar.placeholder = 'Напишите небольшой отзыв';
+    txar.value = reviewText || '';
+
+
+    //fix for optimize css
+    // addClassName('pl20 mf_spIco starsVote starsVoted starsImg')
+    var errorSpan = new Element('span').addClassName('mt10 mf_dB').setStyle('height: 17px;'),
+        voteDiv  = new Element('div', { 'class': 'starsVote' }).writeAttribute('setVote', reviewVote),
+        starsDiv = new Element('div', { 'class': 'starsImg' });
+
+
+    var votedDiv = new Element('div', { 'class': 'starsVoted' });
+    votedDiv.setStyle({ 'width': ((reviewWidth * 100 / 5) || '0') + '%' });
+    // votedDiv can be removed altogether. But deleting is easy, and adding is hard...
+    votedDiv.hide();
+    reviewVote = reviewVote || 0;
+
+    // magic starts here
+    var imgw = 15;
+    var refImg = new Element('img', {
+        'border': 0, 'alt': '', 'src': 'data:image/gif;base64,R0lGODlhAQABAPAAAMDAwAAAACH5BAUAAAAALAAAAAABAAEAQAICRAEAOw=='
+    });
+    for (var i = 1; i <= 5; i++) {
+        // height and width setted here because of IE
+        var img = refImg.cloneNode(false).writeAttribute('height', 15).writeAttribute('width', imgw).writeAttribute('data-rating', i);
+        img.observe('mouseover', Element.setStyle.curry(voteDiv, { 'width': parseInt(imgw*i)+'px' }));
+        img.observe('mouseout',  function () { voteDiv.setStyle( { 'width': parseInt(imgw*voteDiv.readAttribute('setVote'))+'px' } )});
+        img.observe('click', Element.writeAttribute.curry(voteDiv, 'setVote', i));
+        img.observe('click', function() {
+            //Заинейблить кнопку сохранения
+            //voteButton.enable()
+        });
+        starsDiv.insert(img);
+    }
+
+//    starsDiv.observe('click', function(ev){
+//        var rating = ev.target.readAttribute('data-rating');
+//        voteDiv.setAttribute('setVote', ev.target.readAttribute('data-rating'));
+//        voteDiv.style.width = 15 * rating + 'px';
+//    });
+//    starsDiv.observe('mouseover', function(ev){
+//        var el = ev.target;
+//
+//    });
+    voteDiv.setStyle({ 'width': parseInt(imgw*reviewVote)+'px' });
+    // magic end
+    var voteCommentSpan = document.createElement('span');
+
+    voteCommentSpan.innerHTML = 'Оценка:';
+    voteCommentSpan.id = 'vote-comment';
+    voteCommentSpan.style.float = 'left';
+    voteCommentSpan.style.display = 'block';
+    voteCommentSpan.style.margin = '0 10px 0 0';
+    
+    var contentDiv = new Element('div');
+
+    contentDiv.insert(
+        new Element('div').setStyle({'position' : 'relative', 'overflow' : 'hidden', 'margin': '0 0 20px'}).insert(voteCommentSpan).insert(
+            new Element('div').addClassName('starsBack').setStyle({'float' : 'left'}).insert(votedDiv).insert(voteDiv).insert(starsDiv)
+        )
+    ).insert(txar).insert(errorSpan);
+     
+    dialog.setStyle = {'padding' : '1px'};
+    dialog.done = false;
+    dialog.page_appcanvas = 1;
+    dialog.wm_form        = 0;
+    dialog.wrp_style      = 'width: 600px;';
+    dialog.returnContent  = function(content) {
+        return function(params) {
+            return content;
+        };
+    }(contentDiv);
+    dialog.up({
+        handler_down: function() {
+            if(mailru && mailru.server)
+                mailru.server.events.reviewDialog.onDialogClose();
+        },
+        appid: window.appid,
+        title: 'Оцените приложение',
+        onclick_submit:  vote_handler,
+        appname: appName === undefined ? 'Оценка приложения' : appName,
+        wm_reset: {
+            button_value   : 'Отмена',
+            button_onclick : 1,
+            button_id      : 'wrp_cancel',
+            button_name    : 'wrp_cancel',
+            button_type    : 'button'
+        },
+        wm_submit: {
+            button_value   : 'Оценить',
+            button_onclick : 1,
+            button_id      : 'wrp_submit',
+            button_name    : 'wrp_submit',
+            button_type    : 'button'
+        },
+        wrp_style: {
+            'padding' : '1px'
+        }
+    });
+    if(mailru && mailru.server)
+        mailru.server.events.reviewDialog.onDialogShow();
+}

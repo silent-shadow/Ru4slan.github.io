@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://mycomet.my.mail.ru/proxy.html?5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            
+                document.domain = 'mail.ru';
+            
+            var isIE7 = (navigator.userAgent.match( /MSIE\s\d/ )||[''])[0]=='MSIE 7';
+            var sendError = true;
+            var utils = {	
+                makeGet: function(hash){
+                    var r = [];
+                    for(var k in hash){
+                        if(!hash.hasOwnProperty(k)) continue;
+                        r[r.length] = k+ '='+ escape(hash[k]);
+                    }
+                    return r.join('&');
+                }
+            }
+
+            window.onunload = window.onUnload = function () {
+                sendError = false;
+            };
+            var xhr = (function(){
+                var xhr = function(){
+                    if(window.XMLHttpRequest){
+                        return new XMLHttpRequest();
+                    } else {
+                        try {
+                            return new ActiveXObject('MSXML2.XMLHTTP.3.0');
+                        } catch(e) {
+                            try {
+                                return new ActiveXObject('Microsoft.XMLHTTP');
+                            } catch(e) {}
+                        }
+                    }
+                }
+                return function(opts){
+                    var stopped = false;
+                    var r = xhr();
+                    var timestamp = new Date();
+                    if(!opts || !opts.url || !r)
+                        return;
+                    opts.method = opts.method || 'GET';
+                    
+                    opts.get = opts.get || {};
+                    
+                    r.open(opts.method, opts.url+ '?'+ utils.makeGet(opts.get), true);
+                    if(opts.cb){
+                        r.onreadystatechange = function() {
+                            if (r.readyState == 4) {
+                                window.clearTimeout(timeout);
+                                if(r.status == 200) {
+                                    if(!opts._timeout_trigged)
+                                        opts.cb(r.responseText);
+                                } else if(opts.cbError && sendError){
+                                    opts.cbError('http_error', parseInt(r.status));
+                                }
+                            }
+                        }
+                    }
+                    if(opts.cbError){
+                        var timeout = window.setTimeout(function(){
+                            opts._timeout_trigged=1;
+                            opts.cbError('timeout');
+                        }, 90000);
+                    }
+                    r.send(null);
+                    
+                    return function(no_force){
+                        stopped = true;
+                        window.clearTimeout(timeout);
+                        r.onreadystatechange = function(){};
+                        try{
+                            r.abort();
+                        }catch(e){}
+                        
+                        if(!no_force && isIE7)
+                            window.xhr({url: document.location.pathname});// force request abort
+                    };
+                }
+            })();
+
+            if(parent && parent.channel && parent.channel._proxyReady){
+                parent.channel._proxyReady();
+            }
+        </script>
+    </head>
+    <body>
+
+    
+
+</body></html>

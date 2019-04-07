@@ -1,0 +1,1 @@
+define(["jquery"],function(a){a.extend(window.mailru,{disableAutoInit:!0})});
