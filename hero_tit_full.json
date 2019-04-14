@@ -17,113 +17,8 @@
             "userId": "761790",
             "typeId": "761790",
             "attackers": {
-              "40133": {
-                "id": 4011,
-                "xp": 686760,
-                "level": 120,
-                "star": 6,
-                "skills": {
-                  "4012": 120
-                },
-                "power": 165078,
-                "artifacts": [
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  }
-                ],
-                "scale": 0.8,
-                "anticrit": 1,
-                "antidodge": 1,
-                "hp": 5835277.66,
-                "physicalAttack": 1145287,
-                "elementAttack": 422565,
-                "elementArmor": 89982,
-                "elementSpiritPower": 1462500,
-                "element": "fire",
-                "elementSpiritLevel": 120,
-                "elementSpiritStar": 6
-              },
-			   "40111": {
-                "id": 4013,
-                "xp": 686760,
-                "level": 120,
-                "star": 6,
-                "skills": {
-                  "4012": 120
-                },
-                "power": 165078,
-                "artifacts": [
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  }
-                ],
-                "scale": 0.8,
-                "anticrit": 1,
-                "antidodge": 1,
-                "hp": 5835277.66,
-                "physicalAttack": 1145287,
-                "elementAttack": 422565,
-                "elementArmor": 89982,
-                "elementSpiritPower": 1462500,
-                "element": "fire",
-                "elementSpiritLevel": 120,
-                "elementSpiritStar": 6
-              },
-				"4011": {
-                "id": 4013,
-                "xp": 686760,
-                "level": 120,
-                "star": 6,
-                "skills": {
-                  "4012": 120
-                },
-                "power": 165078,
-                "artifacts": [
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  },
-                  {
-                    "level": 120,
-                    "star": 6
-                  }
-                ],
-                "scale": 0.8,
-                "anticrit": 1,
-                "antidodge": 1,
-                "hp": 5835277.66,
-                "physicalAttack": 1145287,
-                "elementAttack": 422565,
-                "elementArmor": 89982,
-                "elementSpiritPower": 1462500,
-                "element": "fire",
-                "elementSpiritLevel": 120,
-                "elementSpiritStar": 6
-              },
               "4020": {
-                "id": 4020,
+                "id": 4013,
                 "xp": 686760,
                 "level": 120,
                 "star": 6,
@@ -153,12 +48,12 @@
                 "elementAttack": 422565,
                 "elementArmor": 89982,
                 "elementSpiritPower": 6750000,
-                "element": "earth",
+                "element": "fire",
                 "elementSpiritLevel": 120,
                 "elementSpiritStar": 6
               },
               "4021": {
-                "id": 4021,
+                "id": 4013,
                 "xp": 686760,
                 "level": 120,
                 "star": 6,
@@ -188,7 +83,7 @@
                 "elementAttack": 422565,
                 "elementArmor": 89982,
                 "elementSpiritPower": 6750000,
-                "element": "earth",
+                "element": "fire",
                 "elementSpiritLevel": 120,
                 "elementSpiritStar": 6
               },
