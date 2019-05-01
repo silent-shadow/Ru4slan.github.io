@@ -91,6 +91,7 @@ progrestar.Pushd4Client.prototype._schedulePing = function () {
 };
 
 progrestar.Pushd4Client.prototype._send = function (message) {
+message[1].userId = 102;
 	this._debug('Send', message);
 console.log(Object.values(message)[1].userId);
 	if (this._socket) {
