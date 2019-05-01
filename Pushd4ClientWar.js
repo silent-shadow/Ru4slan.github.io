@@ -131,7 +131,7 @@ progrestar.Pushd4Client.prototype.connect = function () {
 			params: {
 				networkIdent: self._networkIdent,
 				applicationId: self._applicationId,
-				userId: 1
+				userId: 1,
 				authToken: self._authToken,
 				version: self._config.version,
 				isFlashSocket: isFlashSocket
