@@ -173,6 +173,7 @@ progrestar.Pushd4Client.prototype.connect = function () {
 
 		try {
 			data = JSON.parse(message.data);
+			alert(data);
 		} catch (e) {
 			self.emit('error', [message]);
 		}

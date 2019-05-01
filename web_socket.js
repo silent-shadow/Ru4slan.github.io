@@ -30,12 +30,12 @@
     logger.error("Flash Player >= 10.0.0 is required.");
     return;
   }
- /* if (location.protocol == "file:") {
+  if (location.protocol == "file:") {
     logger.error(
       "WARNING: web-socket-js doesn't work in file:///... URL " +
       "unless you set Flash Security Settings properly. " +
       "Open the page via Web server i.e. http://...");
-  }*/
+  }
 
   /**
    * Our own implementation of WebSocket class using Flash.
