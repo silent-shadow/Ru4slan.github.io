@@ -91,9 +91,8 @@ progrestar.Pushd4Client.prototype._schedulePing = function () {
 };
 
 progrestar.Pushd4Client.prototype._send = function (message) {
-message[1].userId = 102;
-	this._debug('Send', message);
-console.log(Object.values(message)[1].userId);
+
+console.log(Object.values(message));
 	if (this._socket) {
 		this._socket.send(JSON.stringify(message));
 		this._schedulePing();
@@ -132,7 +131,7 @@ progrestar.Pushd4Client.prototype.connect = function () {
 			params: {
 				networkIdent: self._networkIdent,
 				applicationId: self._applicationId,
-				userId: self._userId,
+				userId: 1
 				authToken: self._authToken,
 				version: self._config.version,
 				isFlashSocket: isFlashSocket
