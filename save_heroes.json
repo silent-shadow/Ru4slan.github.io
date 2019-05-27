@@ -1,6 +1,6 @@
 {
-          "1": {
-            "id": 1,
+          "1070": {
+            "id": 1070,
             "xp": 31744,
             "level": 44,
             "color": 18,
@@ -13,10 +13,10 @@
 			  0
             ],
             "skills": {
-			  "1": 21,
-              "2": 21,
-              "3": 12,
-              "4": 21
+			  "1086": 21,
+              "1087": 21,
+              "1088": 12,
+              "1089": 21
             },
             "power": 3207,
             "star": 6,
@@ -47,10 +47,58 @@
             ],
             "scale": 1
           },
+          "1": {
+            "id": 1,
+            "xp": 3625195,
+            "level": 130,
+            "color": 18,
+            "slots": [
+              0,
+              0,
+              0,
+              0,
+			  0,
+			  0
+            ],
+            "skills": {
+			  "1": 130,
+              "2": 130,
+              "3": 130,
+              "4": 130
+            },
+            "power": 92240,
+            "star": 6,
+            "runes": [
+              100000,
+              100000,
+              100000,
+              100000,
+              100000
+            ],
+            "skins": [],
+            "currentSkin": 1,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 100,
+                "star": 6
+              },
+              {
+                "level": 100,
+                "star": 6
+              },
+              {
+                "level": 100,
+                "star": 6
+              }
+            ],
+            "scale": 1
+          },
           "2": {
             "id": 2,
-            "xp": 31744,
-            "level": 44,
+            "xp": 3625195,
+            "level": 130,
             "color": 4,
             "slots": {
               "0": 0,
@@ -80,7 +128,7 @@
             "titanGiftLevel": 2,
             "titanCoinsSpent": {
               "consumable": {
-                "24": 510
+                "24": 25510
               }
             },
             "artifacts": [
@@ -542,6 +590,246 @@
             },
             "power": 4875,
             "star": 2,
+            "runes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "skins": {
+              "20": 2
+            },
+            "currentSkin": 0,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 1,
+                "star": 1
+              },
+              {
+                "level": 1,
+                "star": 0
+              },
+              {
+                "level": 1,
+                "star": 0
+              }
+            ],
+            "scale": 1
+          },
+		  "21": {
+            "id": 21,
+            "xp": 31744,
+            "level": 44,
+            "color": 6,
+            "slots": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "skills": {
+              "97": 33,
+              "98": 14,
+              "99": 21
+            },
+            "power": 4875,
+            "star": 3,
+            "runes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "skins": {
+              "20": 2
+            },
+            "currentSkin": 0,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 1,
+                "star": 1
+              },
+              {
+                "level": 1,
+                "star": 0
+              },
+              {
+                "level": 1,
+                "star": 0
+              }
+            ],
+            "scale": 1
+          },
+		  "22": {
+            "id": 22,
+            "xp": 31744,
+            "level": 44,
+            "color": 6,
+            "slots": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "skills": {
+              "97": 33,
+              "98": 14,
+              "99": 21
+            },
+            "power": 4875,
+            "star": 3,
+            "runes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "skins": {
+              "20": 2
+            },
+            "currentSkin": 0,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 1,
+                "star": 1
+              },
+              {
+                "level": 1,
+                "star": 0
+              },
+              {
+                "level": 1,
+                "star": 0
+              }
+            ],
+            "scale": 1
+          },
+		  "23": {
+            "id": 23,
+            "xp": 31744,
+            "level": 44,
+            "color": 6,
+            "slots": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "skills": {
+              "97": 33,
+              "98": 14,
+              "99": 21
+            },
+            "power": 4875,
+            "star": 3,
+            "runes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "skins": {
+              "20": 2
+            },
+            "currentSkin": 0,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 1,
+                "star": 1
+              },
+              {
+                "level": 1,
+                "star": 0
+              },
+              {
+                "level": 1,
+                "star": 0
+              }
+            ],
+            "scale": 1
+          },
+		  "24": {
+            "id": 24,
+            "xp": 31744,
+            "level": 44,
+            "color": 6,
+            "slots": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "skills": {
+              "97": 33,
+              "98": 14,
+              "99": 21
+            },
+            "power": 4875,
+            "star": 6,
+            "runes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "skins": {
+              "20": 2
+            },
+            "currentSkin": 0,
+            "titanGiftLevel": 0,
+            "titanCoinsSpent": null,
+            "artifacts": [
+              {
+                "level": 1,
+                "star": 1
+              },
+              {
+                "level": 1,
+                "star": 0
+              },
+              {
+                "level": 1,
+                "star": 0
+              }
+            ],
+            "scale": 1
+          },
+		  "25": {
+            "id": 25,
+            "xp": 31744,
+            "level": 44,
+            "color": 6,
+            "slots": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "skills": {
+              "97": 33,
+              "98": 14,
+              "99": 21
+            },
+            "power": 4875,
+            "star": 3,
             "runes": [
               0,
               0,
