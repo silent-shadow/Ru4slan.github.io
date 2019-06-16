@@ -189,6 +189,11 @@
 <SubTexture name="45_skill_2" x="84" y="1068" width="80" height="80"/>
 <SubTexture name="45_skill_3" x="166" y="1068" width="80" height="80"/>
 <SubTexture name="45_skill_4" x="248" y="1068" width="80" height="80"/>
+<SubTexture name="1070_skill_1" x="822" y="1314" width="80" height="80"/>
+<SubTexture name="1070_skill_2" x="822" y="1314" width="80" height="80"/>
+<SubTexture name="1070_skill_3" x="822" y="1314" width="80" height="80"/>
+<SubTexture name="1070_skill_4" x="822" y="1314" width="80" height="80"/>
+<SubTexture name="1070_skill_5" x="822" y="1314" width="80" height="80"/>
 <SubTexture name="skill_Titan_earth" x="330" y="1232" width="80" height="80"/>
 <SubTexture name="skill_Titan_fire" x="412" y="1232" width="80" height="80"/>
 <SubTexture name="skill_Titan_water" x="494" y="1232" width="80" height="80"/>
