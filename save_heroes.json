@@ -28,55 +28,8 @@
               0
             ],
             "skins": [],
-            "currentSkin": 1,
-            "titanGiftLevel": 0,
-            "titanCoinsSpent": null,
-            "artifacts": [
-              {
-                "level": 100,
-                "star": 6
-              },
-              {
-                "level": 100,
-                "star": 6
-              },
-              {
-                "level": 100,
-                "star": 6
-              }
-            ],
-            "scale": 1
-          },
-		  "1069": {
-            "id": 1069,
-            "xp": 31744232,
-            "level": 130,
-            "color": 18,
-            "slots": [
-              0,
-              0,
-              0,
-              0,
-			  0,
-			  0
-            ],
-            "skills": {
-			  "1082": 130,
-              "1083": 130,
-              "1084": 130
-            },
-            "power": 3207,
-            "star": 6,
-            "runes": [
-              250,
-              0,
-              0,
-              0,
-              0
-            ],
-            "skins": [],
-            "currentSkin": 1,
-            "titanGiftLevel": 0,
+            "currentSkin": null,
+            "titanGiftLevel": 30,
             "titanCoinsSpent": null,
             "artifacts": [
               {
